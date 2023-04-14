@@ -2,7 +2,7 @@ const { response } = require("express");
 const mongoose = require("mongoose");
 let Seller = require("../models/seller");
 
-//create employee service for add employee
+//create Seller service for add Seller
 module.exports.createSellerService = async (req, res) => {
   try {
     const sellerName = req.sellerName;
@@ -33,3 +33,25 @@ module.exports.createSellerService = async (req, res) => {
     throw err;
   }
 };
+
+module.exports.getOneSellerService = async (req, res) => {
+    try {
+      let id = req.id;
+  
+      let response = await Seller.find({ _id : id});
+  
+      if (response) {
+        return {
+          msg: "success",
+          data: response,
+        };
+      } else {
+        return {
+          msg: "faild",
+          data: response,
+        };
+      }
+    } catch (err) {
+      throw err;
+    }
+  };
