@@ -18,4 +18,9 @@ router.route("/getBuyer/:id").post((req,res)=>{
     const response = buyreController.getOneBuyerController(getData, res);
 });
 
+// route for get all buyers
+router.route("/getAllBuyers").get((req,res) => {
+    const response = buyreController.getBuyerController(req.body.data ,res);
+});
+
 module.exports = router;

@@ -61,3 +61,24 @@ module.exports.getOneBuyerService = async(req,res) => {
         throw err;
     }
 };
+
+// create service for get all buyers
+module.exports.getBuyerService = async(req,res) => {
+    try {
+        let response = await Buyer.find();
+
+        if (response) {
+            return{
+                msg: "success",
+                data: response,
+            };
+        } else {
+            return{
+                msg: "faild",
+                data: response,
+            }
+        }
+    } catch (err) {
+        throw err;
+    }
+}
