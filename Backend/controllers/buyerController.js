@@ -56,4 +56,21 @@ module.exports.getBuyerController = async(req,res) => {
     } catch (err) {
         return res.status(300).send({message: "Cannot get buyers...!", err: err.message});
     }
-}
+};
+
+// controller for update buyer
+module.exports.updateBuyerController = async(req,res) => {
+    try {
+        let serviceResponse = await buyerService.updateBuyerService(req);
+        if ((serviceResponse.msg = "success")) {
+            // return service respose
+            return res.status(200).send({
+                message: "Buyers details updated...!",
+            });
+        } else {
+            return res.status(300).send({message: "Cannot update buyer...!"});
+        }
+    } catch (err) {
+        return res.status(300).send({message: "Cannot update buyers...!", err: err.message});
+    }
+};

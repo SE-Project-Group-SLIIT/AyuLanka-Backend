@@ -81,4 +81,53 @@ module.exports.getBuyerService = async(req,res) => {
     } catch (err) {
         throw err;
     }
-}
+};
+
+// create service for update selected buyer
+module.exports.updateBuyerService = async(req,res) => {
+    try {
+        let id = req.id;
+        let idString = id.toString();
+
+        // destructure
+        const {
+            BuyerName,
+            // Address,
+            DOB,
+            Email,
+            MobileNumber,
+            Gender,
+            Password,
+        } = req.body;
+
+        const updateBuyer = {
+            BuyerName,
+            // Address,
+            DOB,
+            Email,
+            MobileNumber,
+            Gender,
+            Password,
+        };
+
+        let response = await Buyer.findByIdAndUpdate(
+            {_id: idString},
+            updateBuyer
+        );
+
+        if (response) {
+            return{
+                msg: "success",
+                data: response,
+            };
+        } else {
+            return{
+                msg: "faild",
+                data: response,
+            };
+        }
+
+    } catch (err) {
+        throw err;
+    }
+};

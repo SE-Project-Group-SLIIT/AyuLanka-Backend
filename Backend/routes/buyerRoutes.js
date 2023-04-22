@@ -23,4 +23,15 @@ router.route("/getAllBuyers").get((req,res) => {
     const response = buyreController.getBuyerController(req.body.data ,res);
 });
 
+// route update selected buyer using id
+router.route("/updateBuyer/:id").post((req,res) => {
+    let id = req.params.id;
+    let updateBuyer = {
+        id: id,
+        body: req.body,
+    };
+
+    const response = buyreController.updateBuyerController(updateBuyer, res);
+});
+
 module.exports = router;
