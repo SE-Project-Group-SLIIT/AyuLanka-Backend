@@ -4,7 +4,6 @@ let Buyer = require('../models/buyer');
 
 // create buyer service for add buyer 
 module.exports.createBuyerService = async(req,res) => {
-    console.log("add start")
     try{
 
         const BuyerName = req.BuyerName;
@@ -41,3 +40,24 @@ module.exports.createBuyerService = async(req,res) => {
     }
 };
 
+// create service for get one buyer using id
+module.exports.getOneBuyerService = async(req,res) => {
+    try {
+        let id = req.id;
+        let response = await Buyer.find({_id : id});
+
+        if(response){
+            return{
+                msg: "success",
+                data: response,
+            };
+        } else {
+            return{
+                msg: "faild",
+                data: response,
+            };
+        }
+    } catch (err) {
+        throw err;
+    }
+};

@@ -21,3 +21,21 @@ module.exports.createBuyerController = async(req,res) =>{
         return res.status(300).send({message: "Cannot Add new Buyer...!", err: err.message});
     }
 };
+
+// controller for get one buyer
+module.exports.getOneBuyerController = async(req,res) => {
+    try {
+        let serviceResponse = await buyerService.getOneBuyerService(req);
+        if((serviceResponse.msg = "success")){
+            // return serviceResponse
+            return res.status(200).send({
+                message: "Buyer details retrieved...!",
+                data: serviceResponse.data,
+            });
+        } else {
+            return res.status(300).send({message: "Cannot retrieve buyer...!"});
+        }
+    } catch (err) {
+        return res.status(300).send({message: "Cannot retrive buyer...!", err: err.message}); 
+    }
+}
