@@ -44,6 +44,11 @@ const product = new Schema({
         type:String,
         maxlength: 1000,
         required : true,
+    },
+
+    productCategory: {
+        type: String,
+        maxlength: 100,
     }
 
 
