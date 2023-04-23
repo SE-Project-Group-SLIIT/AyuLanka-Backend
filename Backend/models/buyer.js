@@ -9,12 +9,6 @@ const buyer = new Schema({
         required: true,
     },
 
-    // Address: {
-    //     type: String,
-    //     maxlength: 150,
-    //     required: true,
-    // },
-
     DOB: {
         type: Date,
         required: true,
@@ -43,9 +37,35 @@ const buyer = new Schema({
         required:true,
     },
 
-    // ProfilePicture: {
+    Province: {
+        type: String,
+        maxlength: 40,
+        required: true,
+    },
 
-    // }
+    City: {
+        type: String,
+        maxlength: 30,
+        required: true,
+    },
+
+    Area: {
+        type: String,
+        maxlength: 30,
+        required: true,
+    },
+
+    Address: {
+        type: String,
+        maxlength: 150,
+        required: true,
+    },
+
+    PostalCode: {
+        type: String,
+        maxlength: 10,
+        required: true,
+    },
 
 })
 

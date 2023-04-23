@@ -7,21 +7,29 @@ module.exports.createBuyerService = async(req,res) => {
     try{
 
         const BuyerName = req.BuyerName;
-        // const Address = req.Address;
         const DOB = req.DOB;
         const Email = req.Email;
         const MobileNumber = req.MobileNumber;
         const Gender = req.Gender;
         const Password = req.Password;
+        const Province = req.Province;
+        const City = req.City;
+        const Area = req.Area;
+        const Address = req.Address;
+        const PostalCode = req.PostalCode;
 
         const newBuyer = new Buyer({
             BuyerName,
-            // Address,
             DOB,
             Email,
             MobileNumber,
             Gender,
             Password,
+            Province,
+            City,
+            Area,
+            Address,
+            PostalCode
         });
 
         let response = await newBuyer.save();
@@ -92,22 +100,30 @@ module.exports.updateBuyerService = async(req,res) => {
         // destructure
         const {
             BuyerName,
-            // Address,
             DOB,
             Email,
             MobileNumber,
             Gender,
             Password,
+            Province,
+            City,
+            Area,
+            Address,
+            PostalCode
         } = req.body;
 
         const updateBuyer = {
             BuyerName,
-            // Address,
             DOB,
             Email,
             MobileNumber,
             Gender,
             Password,
+            Province,
+            City,
+            Area,
+            Address,
+            PostalCode
         };
 
         let response = await Buyer.findByIdAndUpdate(

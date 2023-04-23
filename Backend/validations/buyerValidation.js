@@ -4,12 +4,16 @@ const Joi = require('joi');
 const buyerValidationSchema = (data) => {
     const schemaValidation = Joi.object({
         BuyerName: Joi.string().required(),
-        // Address:Joi.string().required(),
-        DOB:Joi.date().required(),
-        Email:Joi.string().required(),
-        MobileNumber:Joi.number().required(),
-        Gender:Joi.string().required(),
-        Password:Joi.string().required(),
+        DOB: Joi.date().required(),
+        Email: Joi.string().required(),
+        MobileNumber: Joi.number().required(),
+        Gender: Joi.string().required(),
+        Password: Joi.string().required(),
+        Province: Joi.string().required(),
+        City: Joi.string().required(),
+        Area: Joi.string().required(),
+        Address: Joi.string().required(),
+        PostalCode: Joi.string().required(),
     });
 
     return schemaValidation.validate(data);
