@@ -2,6 +2,7 @@ const router = require("express").Router();
 const ProductController = require("../controllers/productController");
 
 router.route("/add").post((req, res) => {
+  console.log("awa")
     const response = ProductController.createProductController(req.body, res);
   });
 

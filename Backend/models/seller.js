@@ -17,9 +17,21 @@ const seller = new Schema({
     },
 
     shopAddress :{
-        type:String,
-        maxlength: 100,
-        required : true,
+        Address: {
+            type: String
+        },
+        secondAddress : {
+            type: String
+        },
+        Country : {
+            type: String
+        },
+        State: {
+            type: String 
+        },
+        ZipCode: {
+            type: String 
+        },
     },
 
     Email :{
@@ -33,6 +45,16 @@ const seller = new Schema({
         maxlength:10,        
         required : true,
     },
+
+    shopCoverImage : {
+        public_id: {
+            type: String
+        },
+        url: {
+            type: String
+        } 
+    }
+
 
 })
 

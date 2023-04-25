@@ -13,6 +13,7 @@ module.exports.createProductService = async (req, res) => {
     const productQuantity = Number(req.productQuantity);
     const productDescription = req.productDescription;
     const productCategory = req.productCategory;
+    const cashOnDelivery = req.cashOnDelivery;
 
     const newProduct = new Product({
       productName,
@@ -23,6 +24,7 @@ module.exports.createProductService = async (req, res) => {
       productQuantity,
       productDescription,
       productCategory,
+      cashOnDelivery,
     });
     let reponse = await newProduct.save();
 
