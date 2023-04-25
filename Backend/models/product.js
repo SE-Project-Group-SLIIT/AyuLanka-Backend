@@ -5,6 +5,12 @@ const Schema =mongoose.Schema;
 
 const product = new Schema({
 
+    productTitle : {
+        type:String,
+        maxlength: 100,
+        required : true,
+    },
+
     productName : {
         type:String,
         maxlength: 100,
@@ -19,8 +25,6 @@ const product = new Schema({
 
     shop:{
         type: Schema.Types.ObjectId,
-		ref: 'Seller',
-		index: true,
 		required: true
     },
 
@@ -49,6 +53,11 @@ const product = new Schema({
     productCategory: {
         type: String,
         maxlength: 100,
+    },
+
+    cashOnDelivery: {
+        type: Boolean,
+		default: false
     }
 
 
