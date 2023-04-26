@@ -28,11 +28,13 @@ const sellerRouter = require("./routes/sellerRoutes");
 const productRouter = require("./routes/productRoutes");
 const orderRouter = require("./routes/orderRoutes")
 const paymentRouter = require("./routes/paymentRoutes")
+const cartRoutes = require("./routes/cartRoutes")
 
 app.use("/seller",sellerRouter);
 app.use("/product",productRouter);
 app.use("/order", orderRouter)
 app.use("/payment", paymentRouter)
+app.use("/cart",cartRoutes)
 
 app.listen(PORT, () => {
     console.log(`server is up and running on port: ${PORT}`);
