@@ -17,9 +17,11 @@ module.exports.createSellerService = async (req, res) => {
     const Country = req.SelectCountry;
     const State = req.NewSelectState;
     const ZipCode = req.ZipCode;
+    
+  console.log(image)
 
     const result = await cloudinary.uploader.upload(image, {
-      folder: "products",
+      folder: "seller",
       // width: 300,
       // crop: "scale"
     })
