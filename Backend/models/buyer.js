@@ -10,7 +10,13 @@ const buyer = new Schema({
     },
 
     DOB: {
-        type: Date,
+        type: String,
+        required: true,
+    },
+
+    Gender: {
+        type: String,
+        maxlength: 10,
         required: true,
     },
 
@@ -21,12 +27,6 @@ const buyer = new Schema({
     },
 
     MobileNumber: {
-        type: Number,
-        maxlength: 10,
-        required: true,
-    },
-
-    Gender: {
         type: String,
         maxlength: 10,
         required: true,
@@ -63,7 +63,6 @@ const buyer = new Schema({
 
     PostalCode: {
         type: String,
-        maxlength: 10,
         required: true,
     },
 

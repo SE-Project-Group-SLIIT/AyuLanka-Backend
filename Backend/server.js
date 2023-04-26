@@ -25,7 +25,11 @@ connection.once("open", () => {
 });
 
 const buyerRouter = require("./routes/buyerRoutes");
+const loginRouter = require("./routes/loginRoutes");
+
+
 app.use("/buyer",buyerRouter);
+app.use("/login",loginRouter);
 
 app.listen(PORT, () => {
     console.log(`server is up and running on port: ${PORT}`);

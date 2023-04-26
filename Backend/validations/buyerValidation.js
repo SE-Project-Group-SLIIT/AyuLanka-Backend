@@ -4,10 +4,10 @@ const Joi = require('joi');
 const buyerValidationSchema = (data) => {
     const schemaValidation = Joi.object({
         BuyerName: Joi.string().required(),
-        DOB: Joi.date().required(),
-        Email: Joi.string().required(),
-        MobileNumber: Joi.number().required(),
+        DOB: Joi.string().required(),
         Gender: Joi.string().required(),
+        Email: Joi.string().required(),
+        MobileNumber: Joi.string().required(),
         Password: Joi.string().required(),
         Province: Joi.string().required(),
         City: Joi.string().required(),
