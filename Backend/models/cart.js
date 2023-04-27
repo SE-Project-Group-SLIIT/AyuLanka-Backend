@@ -5,26 +5,37 @@ const Schema = mongoose.Schema;
 
 const cart = new Schema({
 
-    cartID: {
+    // cartID: {
+    //     type: String,
+    //     maxlength: 100,
+    //     required: true,
+    // },
+
+    item: {
         type: String,
         maxlength: 100,
         required: true,
     },
 
+    itemPrice: {
+        type: Number,
+        required: true,
+    },
+
     cartQuantity: {
-        type : Number,
-        require:true,
+        type: Number,
+        require: true,
 
     },
 
     itemId: {
-        type : String,
-        required:true,
+        type: String,
+        required: true,
     },
 
     userId: {
-        type : String,
-        
+        type: String,
+
     }
 
 })
