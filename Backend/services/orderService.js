@@ -4,6 +4,7 @@ let Order = require("../models/order");
 let Delivery = require("../models/delivery")
 
 module.exports.createOrderService = async (req, res) => {
+    console.log("reqqOrder>>", req)
     try {
         const orderID = req.orderID;
         const productID = req.productID;
@@ -51,6 +52,9 @@ module.exports.createDeliveryForOrderService = async (req, res) => {
         const province = req.province;
         const city = req.city;
         const postalCode = req.postalCode;
+        const country = req.country;
+        const phone = req.phone;
+        const email = req.email;
 
 
         const newDelivery = new Delivery({
@@ -59,6 +63,9 @@ module.exports.createDeliveryForOrderService = async (req, res) => {
             city,
             province,
             postalCode,
+            country,
+            phone,
+            email
 
         });
 

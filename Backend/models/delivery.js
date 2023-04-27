@@ -31,6 +31,21 @@ const delivery = new Schema({
         maxlength: 100,
         required: true,
     },
+    country: {
+        type: String,
+        maxlength: 100,
+        required: true,
+    },
+    phone: {
+        type: String,
+        maxlength: 20,
+        required: true,
+    },
+    email: {
+        type: String,
+        maxlength: 100,
+        required: true,
+    }
 
 
 

@@ -13,7 +13,7 @@ const payment = new Schema({
 
     amount: {
         type: String,
-        required: true,
+        // required: true,
     },
     // CVC: {
     //     type: Number,

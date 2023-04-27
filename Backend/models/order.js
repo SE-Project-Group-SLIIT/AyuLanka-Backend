@@ -56,7 +56,7 @@ const order = new Schema({
     paymentID: {
         type: String,
         maxlength: 100,
-        required: true,
+        // required: true,
     },
     isOnlinePayment: {
         type: Boolean,
